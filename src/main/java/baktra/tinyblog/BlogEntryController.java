@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class BlogEntryController {
 
-    private BlogEntryRepository repository = new InMemoryRepository();
+    private final BlogEntryRepository repository = new InMemoryRepository();
 
     @GetMapping(value="/blogentry/{id}")
     public ResponseEntity getBlogEntry(@PathVariable int id) {

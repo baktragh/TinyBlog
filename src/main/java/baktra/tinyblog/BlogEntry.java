@@ -2,11 +2,11 @@ package baktra.tinyblog;
 
 public class BlogEntry {
 
-    private String title;
-    private String subTitle;
-    private String mainText;
-    private String footer;
-    private int id;
+    private final String title;
+    private final String subTitle;
+    private final String mainText;
+    private final String footer;
+    private final int id;
 
     public BlogEntry(int id,String title, String subTitle, String mainText, String footer) {
         this.id=id;

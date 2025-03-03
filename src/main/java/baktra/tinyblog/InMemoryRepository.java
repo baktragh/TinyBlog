@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class InMemoryRepository implements BlogEntryRepository {
 
-    private HashMap<Integer,BlogEntry> records;
+    private final HashMap<Integer,BlogEntry> records;
 
     @Override
     public BlogEntry getEntryById(int id) {
