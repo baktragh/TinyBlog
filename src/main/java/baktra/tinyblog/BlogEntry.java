@@ -1,11 +1,22 @@
 package baktra.tinyblog;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
 
+
+@Entity(name="blog_entry")
+@Table(name="t_blog_entries",schema="tiny_blog")
 public class BlogEntry {
 
     private final String title;
     private final String subTitle;
     private final String mainText;
     private final String footer;
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private final int id;
 
     public BlogEntry(int id,String title, String subTitle, String mainText, String footer) {

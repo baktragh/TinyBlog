@@ -20,4 +20,6 @@ dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:3.4.3"))
     implementation("org.springframework.boot:spring-boot")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("jakarta.persistence:jakarta.persistence-api")
+    implementation("org.springframework.data:spring-data-jpa")
 }

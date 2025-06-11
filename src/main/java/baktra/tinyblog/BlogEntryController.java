@@ -10,7 +10,7 @@ public class BlogEntryController {
     private final BlogEntryRepository repository = new InMemoryRepository();
 
     @GetMapping(value="/blogentry/{id}")
-    public ResponseEntity getBlogEntry(@PathVariable int id) {
+    public ResponseEntity<BlogEntry> getBlogEntry(@PathVariable int id) {
         BlogEntry entry = repository.getEntryById(id);
         if (entry!=null) {
             return ResponseEntity.status(HttpStatus.OK).body(entry);
@@ -22,7 +22,7 @@ public class BlogEntryController {
     }
 
     @PostMapping(value = "/blogentry/{id}")
-    public ResponseEntity newBlogEntry(@PathVariable int id, @RequestParam String title, @RequestParam String subtitle, @RequestParam String mainText, @RequestParam String footer) {
+    public ResponseEntity<Void> newBlogEntry(@PathVariable int id, @RequestParam String title, @RequestParam String subtitle, @RequestParam String mainText, @RequestParam String footer) {
 
         BlogEntry entry = new BlogEntry(id, title, subtitle, mainText, footer);
         boolean b = repository.add(entry);
@@ -35,7 +35,7 @@ public class BlogEntryController {
     }
 
     @DeleteMapping(value="/blogentry/{id}")
-    public ResponseEntity deleteBlogEntry(@PathVariable int id) {
+    public ResponseEntity<Void> deleteBlogEntry(@PathVariable int id) {
         boolean b = repository.remove(id);
         if (b) {
             return ResponseEntity.status(HttpStatus.OK).build();
