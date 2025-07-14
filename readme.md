@@ -2,12 +2,14 @@
 
 This is an experimental project where I practice creating REST APIs using the Spring Boot library.
 
-## Components
-- Blog Entries - Simple blog entries with title, subtitle, main text, and footer
-- REST API Controller for manipulating blog entry
+## Backend Components
+- Blog Entries - Simple blog entries with title, subtitle, main text, and a footer
+- REST API Controller for manipulating blog entries (GET, POST, DELETE)
 - Repositories of blog entries
   - Simple in-memory repository  
   - TODO: Database backed repository (using Spring Data or JPA)
+  - 
+## Frontend
 - TODO: A simple front-end (Angular, React or similar)
 
 ## Build system

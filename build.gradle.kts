@@ -22,4 +22,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("jakarta.persistence:jakarta.persistence-api")
     implementation("org.springframework.data:spring-data-jpa")
+    implementation("org.springframework.data:spring-data-jpa")
+    implementation("org.hibernate:hibernate-core-jakarta:5.6.15.Final")
+    implementation("com.h2database:h2")
+
+
+
 }

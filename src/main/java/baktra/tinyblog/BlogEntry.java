@@ -3,10 +3,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
-
-@Entity(name="blog_entry")
+@Entity(name="e_blog_entry")
 @Table(name="t_blog_entries",schema="tiny_blog")
 public class BlogEntry {
 

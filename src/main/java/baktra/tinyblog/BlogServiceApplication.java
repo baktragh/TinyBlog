@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-    @SpringBootApplication
+@SpringBootApplication
     public class BlogServiceApplication {
 
         public static void main(String[] args) {
-            System.out.println("Application started");
+            System.out.println(BlogServiceApplication.class.getName()+" Application started");
             SpringApplication.run(BlogServiceApplication.class, args);
         }
 
