@@ -24,6 +24,12 @@ public class BlogEntryController {
         }
     }
 
+    @GetMapping(value="/blogentry/makesample")
+    public ResponseEntity<BlogEntry> makeSample() {
+        repository.createSampleData();
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
     @PostMapping(value = "/blogentry/{id}")
     public ResponseEntity<Void> newBlogEntry(@PathVariable int id, @RequestParam String title, @RequestParam String subtitle, @RequestParam String mainText, @RequestParam String footer) {
 

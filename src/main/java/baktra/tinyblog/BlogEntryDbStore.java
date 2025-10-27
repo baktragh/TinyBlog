@@ -25,10 +25,18 @@ public class BlogEntryDbStore implements BlogEntryStore {
 
     @Override
     public boolean add(BlogEntry b) {
-        BlogEntry entryToDelete = blogEntrySQLRepo.findBlogEntryById(b.getId());
-        if (entryToDelete!=null) return false;
-        blogEntrySQLRepo.save(b);
-        return true;
+        try {
+            BlogEntry entryToDelete = blogEntrySQLRepo.findBlogEntryById(b.getId());
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        finally {
+
+            blogEntrySQLRepo.save(b);
+            return true;
+        }
     }
 
     @Override
@@ -37,5 +45,10 @@ public class BlogEntryDbStore implements BlogEntryStore {
         if (entryToDelete==null) return false;
         blogEntrySQLRepo.delete(entryToDelete);
         return true;
+    }
+
+    public void createSampleData() {
+        add(new BlogEntry(105,"Test Entry 105","My subtitle 100","Sample main text 100","Testing footer 100"));
+        add(new BlogEntry(106,"Test Entry 106","My subtitle 101","Sample main text 101","Testing footer 101"));
     }
 }

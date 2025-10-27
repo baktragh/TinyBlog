@@ -13,7 +13,7 @@ public class BlogEntry {
     private final String footer;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    //@GeneratedValue(strategy= GenerationType.AUTO)
     private final int id;
 
     public BlogEntry(int id,String title, String subTitle, String mainText, String footer) {
@@ -22,6 +22,15 @@ public class BlogEntry {
         this.subTitle = subTitle;
         this.mainText = mainText;
         this.footer = footer;
+    }
+
+    public BlogEntry() {
+        this.id=0;
+        this.title="";
+        this.subTitle="";
+        this.mainText="";
+        this.footer="";
+
     }
 
     public int getId() {
