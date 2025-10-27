@@ -20,12 +20,10 @@ dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:3.4.3"))
     implementation("org.springframework.boot:spring-boot")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("jakarta.persistence:jakarta.persistence-api")
     implementation("org.springframework.data:spring-data-jpa")
-    implementation("org.springframework.data:spring-data-jpa")
-    implementation("org.hibernate:hibernate-core-jakarta:5.6.15.Final")
-    implementation("com.h2database:h2")
-
-
-
+    implementation("org.hibernate:hibernate-core:7.1.4.Final")
+    //implementation ("mysql:mysql-connector-java:8.0.33")
+    implementation("org.hibernate:hibernate-entitymanager:5.6.15.Final")
+    implementation("com.h2database:h2:2.3.230")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.5.7")
 }

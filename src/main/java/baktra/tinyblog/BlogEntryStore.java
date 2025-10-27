@@ -1,10 +1,10 @@
-package baktra.tinyblog.repository;
+package baktra.tinyblog;
 
-import baktra.tinyblog.BlogEntry;
+import baktra.tinyblog.entity.BlogEntry;
 
 import java.util.List;
 
-public interface BlogEntryRepository {
+public interface BlogEntryStore {
 
     BlogEntry getEntryById(int id);
     List<BlogEntry> getAllEntries();

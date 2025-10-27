@@ -1,11 +1,11 @@
-package baktra.tinyblog.repository;
+package baktra.tinyblog;
 
-import baktra.tinyblog.BlogEntry;
+import baktra.tinyblog.entity.BlogEntry;
 
 import java.util.List;
 import java.util.HashMap;
 
-public class InMemoryRepository implements BlogEntryRepository {
+public class BlogEntryInMemoryStore implements BlogEntryStore {
 
     private final HashMap<Integer, BlogEntry> records;
 
@@ -19,7 +19,7 @@ public class InMemoryRepository implements BlogEntryRepository {
         return List.of(records.entrySet().toArray(new BlogEntry[0]));
     }
 
-    public InMemoryRepository() {
+    public BlogEntryInMemoryStore() {
         records = new HashMap<>();
         createSampleData();
     }

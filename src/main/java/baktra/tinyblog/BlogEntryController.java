@@ -1,8 +1,6 @@
 package baktra.tinyblog;
 
-import baktra.tinyblog.repository.BlogEntryRepository;
-import baktra.tinyblog.repository.DatabaseRepository;
-import baktra.tinyblog.repository.InMemoryRepository;
+import baktra.tinyblog.entity.BlogEntry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class BlogEntryController {
 
     @Autowired
-    private DatabaseRepository repository;
+    private BlogEntryDbStore repository;
 
     @GetMapping(value="/blogentry/{id}")
     public ResponseEntity<BlogEntry> getBlogEntry(@PathVariable int id) {
