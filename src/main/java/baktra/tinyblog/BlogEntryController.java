@@ -6,11 +6,26 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class BlogEntryController {
 
     @Autowired
     private BlogEntryDbStore repository;
+
+
+    @GetMapping(value="/blogentry/")
+    public ResponseEntity<List<BlogEntry>> getBlogEntries() {
+        List<BlogEntry> entries = repository.getAllEntries();
+        if (entries!=null) {
+            return ResponseEntity.status(HttpStatus.OK).body(entries);
+        }
+        else {
+            System.out.println("Entry not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 
     @GetMapping(value="/blogentry/{id}")
     public ResponseEntity<BlogEntry> getBlogEntry(@PathVariable int id) {
